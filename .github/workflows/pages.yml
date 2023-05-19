@@ -104,7 +104,3 @@ jobs:
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v2
-        with:
-          build_dir: dist
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
