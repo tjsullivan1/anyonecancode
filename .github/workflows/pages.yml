@@ -103,7 +103,7 @@ jobs:
           path: dist/instructions
 
       - name: Deploy to GitHub Pages
-        uses: crazy-max/ghaction-github-pages@v3
+        uses: actions/deploy-pages@v2
         with:
           build_dir: dist
         env:
