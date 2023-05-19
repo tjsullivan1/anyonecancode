@@ -45,6 +45,11 @@ jobs:
         with:
           name: static-webapp
           path: frontend/dist
+          
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: frontend/dist
 
   deploy:
     runs-on: ubuntu-latest
@@ -61,13 +66,11 @@ jobs:
     if: github.ref == 'refs/heads/main'
 
     steps:
-      - name: Download build of static app
-        uses: actions/download-artifact@v3
-        with:
-          name: static-webapp
-          path: frontend/dist
+#       - name: Download build of static app
+#         uses: actions/download-artifact@v3
+#         with:
+#           name: static-webapp
+#           path: frontend/dist
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v2
-        with:
-          artifact_name: static-webapp
